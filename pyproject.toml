@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "gen-ai-common-app"  # Replace with your project name
+version = "0.1.0"            # Initial version of the project
+description = "This repo is for showcasing common generative AI applications."  # Project description
+authors = ["MBIA NDI Marie Thérèse <mbialaura12@gmail.com>"]  # Replace with your name and email
+license = "CC0 1.0 Universal"              # Replace with your preferred license
+readme = "README.md"         # Path to your README file
+homepage = "https://github.com/MBIANDI/Gen_AI_tutorials"  # Project's homepage
+repository = "https://github.com/MBIANDI/Gen_AI_tutorials"  # Project repository URL
+
+# Disable package mode
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"              # Python version compatibility
+requests = "^2.28.0"         # Add dependencies here
+# Add more dependencies as needed
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.0"            # Example dev dependency
+black = "^23.1.0"            # Example of a code formatter
+
