@@ -72,14 +72,15 @@ def prepare_rag_data(
     print("Initializing embeddings model...")
     print("Creating vectorial db...")
     index_name = (
-        f"index_chunk:{chunk_size}_embeddings:{model_name.replace('/', '~')}"
+        f"index_chunk-{chunk_size}_embeddings-{model_name.replace('/', '~')}"
     )
-    index_folder_path = f"./data/indexes/{index_name}/"
+    index_folder_path = f"data/indexes/{index_name}//"
 
     if os.path.exists(index_folder_path):
         db = FAISS.load_local(index_folder_path, 
                               embedding_model,
-                                distance_strategy=DistanceStrategy.COSINE,)
+                                distance_strategy=DistanceStrategy.COSINE,
+                                allow_dangerous_deserialization=True)
     else:
         print("Index not found, generating it...")
         db = create_vectorial_db(chunks, embedding_model, index_folder_path)
